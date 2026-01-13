@@ -125,7 +125,7 @@ export function ColophonSection() {
           <ul className="space-y-1 sm:space-y-2">
             <li>
               <a
-                href="mailto:team@etherx.io"
+                href="mailto:theeye@psgtech.ac.in"
                 className="font-mono text-[10px] sm:text-xs text-foreground/80 hover:text-accent transition-colors duration-200"
               >
                 Email
