@@ -65,6 +65,22 @@ export function RegistrationDialog({ trigger }: { trigger: ReactNode }) {
   const isLoggedIn = eligibility?.isLoggedIn ?? false
   const isEligible = eligibility?.isEligible ?? false
 
+  // Prevent body scroll when dialog is open
+  useEffect(() => {
+    if (open) {
+      document.documentElement.style.overflow = "hidden"
+      document.body.style.overflow = "hidden"
+    } else {
+      document.documentElement.style.overflow = ""
+      document.body.style.overflow = ""
+    }
+
+    return () => {
+      document.documentElement.style.overflow = ""
+      document.body.style.overflow = ""
+    }
+  }, [open])
+
   // Auto-populate form with user data when logged in
   useEffect(() => {
     if (!profile?.profile) return

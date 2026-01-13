@@ -35,12 +35,7 @@ const signals: Signal[] = [
     tag: "Cutoff",
     status: "Ship before 23:59 IST",
   },
-  {
-    date: "2026.01.23",
-    title: "Workshop Sprint",
-    note: "Hands-on labs to rehearse exploit chains, recon, and reporting discipline ahead of on-site play.",
-    tag: "Prep",
-  },
+
   {
     date: "2026.02.23",
     title: "Vibe Coding",

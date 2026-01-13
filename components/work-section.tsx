@@ -20,12 +20,7 @@ const experiments = [
     description: "Timestamp-first scoring, first-blood bonuses, and anti-cheat checks.",
     span: "col-span-1 row-span-1",
   },
-  {
-    title: "Workshops",
-    medium: "Prep Labs",
-    description: "Recon, exploitation, and reporting drills to sharpen your team before finals.",
-    span: "col-span-1 row-span-2",
-  },
+
   {
     title: "Vibe Coding",
     medium: "Side Event",

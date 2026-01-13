@@ -62,7 +62,7 @@ export function HeroSection() {
 
         <p className="mt-6 sm:mt-12 max-w-sm sm:max-w-md font-mono text-xs sm:text-sm text-muted-foreground leading-relaxed">
           Daily remote CTF drops on our portal. Fastest solves rise on the leaderboard. Finalists meet on-site for an
-          industry-grade hackathon with full documentation packs, plus side quests like vibe coding and workshops.
+          industry-grade hackathon with full documentation packs and side quests.
         </p>
 
         <div className="mt-10 sm:mt-16 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
