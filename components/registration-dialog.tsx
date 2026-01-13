@@ -47,7 +47,6 @@ const initialForm: FormState = {
   experience: "beginner",
 }
 
-const rollNumberPattern = /^\d{2}[a-zA-Z]{1,2}\d{2,3}$/
 
 export function RegistrationDialog({ trigger }: { trigger: ReactNode }) {
   const [open, setOpen] = useState(false)
@@ -160,12 +159,6 @@ export function RegistrationDialog({ trigger }: { trigger: ReactNode }) {
 
     if (!formData.name.trim() || !formData.phone.trim() || !formData.year || !formData.experience) {
       toast.error("Fill out all required fields")
-      setIsSubmitting(false)
-      return
-    }
-
-    if (!rollNumberPattern.test(formData.rollNumber.trim())) {
-      toast.error("Use roll format: 23N256")
       setIsSubmitting(false)
       return
     }
