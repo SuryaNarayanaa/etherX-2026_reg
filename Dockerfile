@@ -22,6 +22,7 @@ FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+# This will do the trick, use the corresponding env file for each environment.
 COPY .env.production.sample .env.production
 RUN npm run build
 
@@ -35,9 +36,11 @@ RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001
 
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./package.json
+
+# Automatically leverage output traces to reduce image size
+# https://nextjs.org/docs/advanced-features/output-file-tracing
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
 
@@ -45,4 +48,4 @@ EXPOSE 3000
 
 ENV PORT=3000
 
-CMD ["npm", "start"]
+CMD HOSTNAME="0.0.0.0" node server.js
